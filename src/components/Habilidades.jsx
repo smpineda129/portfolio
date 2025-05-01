@@ -2,11 +2,14 @@ import { motion } from "framer-motion"
 
 const Habilidades = () => {
   const skills = [
+    { name: "Elementor", percentage: 100 },
+    { name: "HTML/CSS", percentage: 90 },
+    { name: "GIT", percentage: 90 },
+    { name: "Google Cloud Console", percentage: 90 },
+    { name: "Tailwind CSS", percentage: 85 },
+    { name: "JavaScript", percentage: 85 },
     { name: "React", percentage: 80 },
     { name: "WordPress", percentage: 80 },
-    { name: "Tailwind CSS", percentage: 85 }, // Te corregí "Talahind" 😉
-    { name: "JavaScript", percentage: 85 },
-    { name: "HTML/CSS", percentage: 90 },
   ];
 
   const itemVariants = {
@@ -19,8 +22,8 @@ const Habilidades = () => {
   };
 
   return (
-    <div className="w-full md:max-w-2xl mx-auto p-6 bg-white rounded-lg mt-8 md:w-1/2">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Habilidades</h2>
+    <div className="w-full md:max-w-2xl mx-auto p-6 mt-8 md:w-1/2">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">Skills</h2>
       <div className="space-y-4">
         {skills.map((skill, index) => (
           <motion.div
@@ -35,7 +38,7 @@ const Habilidades = () => {
               <span className="text-gray-700 font-medium">{skill.name}</span>
               <span className="text-gray-500">{skill.percentage}%</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+            <div className="w-full h-2.5 overflow-hidden">
               <motion.div
                 className="bg-blue-600 h-2.5 rounded-full"
                 initial={{ width: 0 }}

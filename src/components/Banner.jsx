@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import StackButton from "./ui/StackButton"
+import { Link } from 'react-scroll';
 
 const containerVariants = {
   hidden: {},
@@ -25,17 +26,17 @@ const Banner = ({ text }) => {
       variants={containerVariants}
     >
       <motion.h1
-        className="text-3xl md:text-8xl font-medium text-center font-sf"
+        className="text-3xl md:text-6xl lg:text-8xl font-medium text-center font-sf"
         variants={itemVariants}
       >
         {text}
       </motion.h1>
 
       <motion.div
-        className="flex gap-x-3 md:gap-x-8 flex-wrap"
+        className="flex gap-x-3 md:gap-x-8 flex-wrap justify-center"
         variants={containerVariants}
       >
-        {["React", "Wordpress", "JavaScript"].map((tech, index) => (
+        {["React", "Wordpress", "JavaScript", "Git", "Tilwind"].map((tech, index) => (
           <motion.div key={index} variants={itemVariants}>
             <StackButton text={tech} />
           </motion.div>
@@ -43,25 +44,34 @@ const Banner = ({ text }) => {
       </motion.div>
 
       <motion.div
-        className="flex gap-x-8 flex-wrap md:flex-nowrap md:flex-row md:w-4/12 w-full"
+        className="flex gap-x-8 flex-wrap md:flex-nowrap md:flex-row w-full md:w-8/12 lg:w-6/12"
         variants={containerVariants}
       >
-        <motion.button
-          className="bg-blue-600 p-4 text-lg w-full md:w-1/2 md:text-2xl text-white rounded-2xl"
-          variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Ver Proyectos
-        </motion.button>
-        <motion.button
-          className="p-4 text-lg w-full md:w-1/2 md:text-2xl"
-          variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Descargar CV
-        </motion.button>
+        <Link
+          to="seccion4"
+          smooth={true}
+          duration={500}
+          offset={-window.innerHeight / 15}
+          className="bg-blue-600 p-4 text-center text-lg w-full md:w-1/2 md:text-2xl text-white rounded-2xl"
+          >
+          <motion.button
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Projects
+          </motion.button>
+        </Link>
+        <a href="/cv/cv2025.pdf" className="p-4 text-lg w-full md:w-1/2 md:text-2xl" download>
+          <motion.button
+            className="text-lg w-full md:text-2xl"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Download CV
+          </motion.button>
+        </a>
       </motion.div>
     </motion.div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Me from "../media/me.jpg"
+import Me from "../media/me.PNG"
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -31,10 +31,14 @@ const AboutSection = () => {
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        <h2 className='text-4xl font-medium text-center md:text-left'>Sobre mi</h2>
-        <p className='text-lg text-gray-600 w-4/5 text-center md:text-left'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem commodi animi fuga architecto, possimus nam molestias maiores ipsa excepturi nobis dignissimos dolorum voluptates obcaecati quam! Adipisci ex magni exercitationem rerum.
-        </p>
+        <h2 className='text-3xl font-semibold text-center md:text-left text-gray-800'>About</h2>
+        <p className=" text-gray-600 w-4/5 text-center md:text-left">
+  I'm a web developer specialized in front-end development with React and WordPress, passionate about building clean, functional, and user-focused digital experiences. Since 2015, I’ve found in code not just a tool, but a calling. With over 3 years of professional experience, I’ve worked on projects ranging from corporate websites to dynamic web applications, using modern tools like Tailwind CSS, JavaScript, Google Cloud, and Elementor.
+  <br /><br />
+  I’m currently completing an intensive Full Stack Development Bootcamp at KeepCoding, aiming to expand my technical skill set and deliver more robust, end-to-end solutions. My approach is simple: write code that works today and lasts tomorrow. I take ownership of what I build, learn from every challenge, and code with intention.
+  <br /><br />
+  Beyond the keyboard, my biggest motivation is to build a future where I can dedicate myself fully to my family—creating today the life I want to live tomorrow.
+</p>
       </motion.div>
     </div>
   )
